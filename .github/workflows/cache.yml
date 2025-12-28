@@ -1,19 +1,19 @@
 name: cache
 on:
   push:
-    path:
+    paths:
     - 'my-app/**'
 
 jobs:
-  cache:
+  test:
     runs-on: ubuntu-latest
     steps:
-    - name: checkout
+    - name: checkout the code
       uses: actions/checkout@v4
     - name: setup-node
       uses: actions/setup-node@v3
       with:
-        node_version: 18
+        node-version: 18
     - name: Cache Node.js modules
       uses: actions/cache@v3
       with:
